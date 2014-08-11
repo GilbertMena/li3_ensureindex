@@ -75,7 +75,7 @@ class EnsureIndexes extends \lithium\console\Command
                     $options = $index + $this->defaults;
 
                     try {
-                        $collection->ensureIndex($keys, $options);
+                        $collection->createIndex($keys, $options);
                     } catch (Exception $e) {
                         $this->error(' * Failed: {:command}' . $name . '{:end} with: ' . $e->getMessage());
                         continue;
